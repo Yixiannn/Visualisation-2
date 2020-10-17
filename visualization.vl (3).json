@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/worldmap.topojson",
+    "format": {"type": "topojson", "feature": "custom"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.admin",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+        },
+        "key": "Country/Region",
+        "fields": ["CumulativeTotalCases", "NumberOfDeaths", "Population"]
+      }
+    },
+    {
+      "calculate": "datum.CumulativeTotalCases/datum.Population*1000000",
+      "as": "Cases per 1,000,000 population"
+    }
+  ],
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "mark": {"type": "geoshape", "color": "#dddcdc"},
+      "encoding": {
+        "longitude": {"field": "log", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Cases per 1,000,000 population",
+          "type": "quantitative",
+          "scale": {"domain": [0, 16], "range": ["#fdbb84", "#e34a33"]}
+        }
+      }
+    }
+  ],
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "properties.admin",
+        "type": "nominal",
+        "title": "Country/Region"
+      },
+      {
+        "field": "CumulativeTotalCases",
+        "type": "quantitative",
+        "title": "Cumulative Total Cases"
+      },
+      {"field": "Population", "type": "quantitative"},
+      {"field": "Cases per 1,000,000 population", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}
