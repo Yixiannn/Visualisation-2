@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.CumulativeMaleCases/datum.CumulativeTotalCases,',.2f')",
+      "as": "Male"
+    },
+    {"calculate": "format(1-datum.Male,',.2f')", "as": "Female"},
+    {"fold": ["Male", "Female"]}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "row": {"field": "Country/Region", "type": "nominal"},
+    "y": {"field": "", "type": "nominal"},
+    "x": {"field": "value", "type": "quantitative", "title": "Total Cases"},
+    "color": {"field": "key", "type": "nominal", "title": "gender"},
+    "tooltip": {"field": "value"}
+  },
+  "config": {}
+}
