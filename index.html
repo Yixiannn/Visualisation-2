@@ -12,7 +12,9 @@
   
 </head>
 <body>
+  
 <h1>Week 10 Homework</h1>
+  
 <h2>This is the first visualisation</h2>
 <div id="visualization.vl (3)"></div>
   
@@ -20,13 +22,15 @@
 <div id="bar chart"></div>
 
 <script type="text/javascript">
+  
   var vis1 = "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/visualization.vl%20(3).json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  
+  vegaEmbed('#visualization.vl (3)', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
    var vis2 = "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/bar%20chart.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  vegaEmbed('#bar chart', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
