@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Percentage of comfired male and female cases in each country",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.CumulativeMaleCases/datum.CumulativeTotalCases,',.2f')",
+      "as": "Male"
+    },
+    {
+      "calculate": "format(datum.CumulativeFemaleCases/datum.CumulativeTotalCases,',.2f')",
+      "as": "Female"
+    },
+    {"fold": ["Male", "Female"]}
+  ],
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {"field": "Country/Region", "type": "nominal"},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Total Cases",
+      "stack": "normalize"
+    },
+    "color": {"field": "key", "type": "nominal", "title": "Gender"},
+    "tooltip": {"field": "value"}
+  },
+  "config": {}
+}
