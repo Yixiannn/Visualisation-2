@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Deaths and Recovered",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.CumulativeTotalCases-datum.NumberOfDeaths",
+      "as": "NumberOfRecovered"
+    },
+    {
+      "calculate": "format(datum.NumberOfRecovered/datum.CumulativeTotalCases,',.2f')",
+      "as": "Recovered"
+    },
+    {
+      "calculate": "format(datum.NumberOfDeaths/datum.CumulativeTotalCases,',.2f')",
+      "as": "Deaths"
+    },
+    {"fold": ["Deaths", "Recovered"]}
+  ],
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "aggregate": "sum", "type": "quantitative"},
+    "color": {
+      "field": "key",
+      "type": "nominal",
+      "title": "",
+      "scale": {"range": ["#fc9272", "#9ecae1"]}
+    },
+    "tooltip": {"field": "value", "aggregate": "sum"}
+  },
+  "config": {}
+}
