@@ -18,7 +18,7 @@
       }
     },
     {
-      "calculate": "datum.CumulativeTotalCases/datum.Population*1000000",
+      "calculate": "format(datum.CumulativeTotalCases/datum.Population*1000000',.2f')",
       "as": "Cases per 1,000,000 population"
     }
   ],
