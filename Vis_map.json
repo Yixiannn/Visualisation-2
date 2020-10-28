@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 650,
+  "width": 750,
   "height": 400,
   "title":"Global Spread Of SARS",
   "data": {
