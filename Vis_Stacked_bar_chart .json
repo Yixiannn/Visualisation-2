@@ -24,7 +24,12 @@
       "title": "Total Cases",
       "stack": "normalize"
     },
-    "color": {"field": "key", "type": "nominal", "title": "Gender"},
+    "color": {
+      "field": "key", 
+      "type": "nominal", 
+      "title": "Gender",
+      "scale":{"range":["#fc9272", "#9ecae1"]}
+      },
     "tooltip": {"field": "value"}
   },
   "config": {}
