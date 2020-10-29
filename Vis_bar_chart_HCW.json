@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 200,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.CumulativeTotalCases-datum.NumberOfHCWAffected",
+      "as": "NumberOfCommonCitizens"
+    },
+    {
+      "calculate": "format(datum.NumberOfCommonCitizens/datum.CumulativeTotalCases,',.2f')",
+      "as": "Common Citizen"
+    },
+    {
+      "calculate": "format(datum.NumberOfHCWAffected/datum.CumulativeTotalCases,',.2f')",
+      "as": "Health Care Worker"
+    },
+    {"fold": ["Common Citizen", "Health Care Worker"]}
+  ],
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "aggregate": "sum", "type": "quantitative"},
+    "color": {
+      "field": "key",
+      "type": "nominal",
+      "title": "",
+      "scale": {"range": ["#99d8c9", "#2ca25f"]}
+    },
+    "tooltip": {"field": "value", "aggregate": "sum"}
+  },
+  "config": {}
+}
