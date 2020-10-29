@@ -10,16 +10,138 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   
+<style> 
+  body{
+      background-color: rgb(247, 247, 247);
+  } 
+
+  .page{
+   width: 850px;
+   height: 1400px;
+   background-color:white;
+   margin: auto;
+   padding: 50px;
+   padding-top:35px;
+   padding-bottom:35px;
+  }
+
+  h1{
+      background-color: rgb(247, 247, 247);
+      text-align: center;
+      }
+  
+  h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #007dc0;
+  }
+
+  .summary_box{
+    float:left;
+    background-color:  rgb(247, 247, 247);
+    text-align: center;
+    width:32%;
+    margin: 5px;
+    margin-bottom: 30px;
+  }
+
+  .description_right{
+      float: right;
+      width: 30%;
+      margin-bottom: 35px;
+      margin-top: 15px;
+   }
+
+   .bar_left{
+       float: left;
+       width: 65%;
+       margin-bottom: 35px;
+       margin-top: 25px;
+   }
+   .description_left{
+       float: left;
+       width: 40%;
+       margin-bottom: 35px;
+
+   }
+   .chart_right{
+       float: right;
+       width: 50%;
+       margin-bottom: 35px;
+       margin-top: 25px;
+   }
+   .chart_title{
+     font-size: 18px;
+     margin-top: 25px;
+   }
+
+  
+</style>
 </head>
 <body>
+
+<div class="page">
+
+<h1> Summary of probable SARS cases from 1 November 2002 to 31 July 2003</h1>
+<p>SARS coronavirus (SARS-CoV) – virus identified in 2003. SARS-CoV is thought to be an animal virus from an as-yet-uncertain animal reservoir, perhaps bats, that spread to other animals (civet cats) and first infected humans in the Guangdong province of southern China in 2002. </p>
+
+
+
+
+<div class="summary_box">
+  <h2>8,096</h2>
+  <p>Comfired SARS Cases</p2>
+</div>
+
+<div class="summary_box">
+  <h2>774</h2>
+  <p>Total Deaths</p2>
+</div>
+
+<div class="summary_box">
+  <h2>29</h2>
+  <p>Countries affected</p>
+</div>
   
-<h1>Week 10 Homework</h1>
-  
-<h2>This is the first visualisation</h2>
+
+
+
+
+<div class="chart_title">
+  <h3>Global Spread Of SARS</h3> 
+</div>
 <div id="Vis_map"></div>
-  
-<h2>This is the second visualisation</h2>
-<div id="bar_chart"></div>
+
+
+
+
+<div class="description_right"> 
+<div class="chart_title">
+  <h3>Percentage of comfired male and female cases in each country</h4>
+</div>
+    <p>The second visualisation hvdbf jkbjkbej kbkszmn bdfjbvb jkhgsbfcdjkhgckja jksadfghkjaf sofdhajkeh sklrdhgflksh slhfgl</p>
+</div> 
+    <div id="bar_chart" class="bar_left">
+    </div>
+
+
+
+
+<div class="description_left">
+  <div class="chart_title">
+    <h3>Percentage of Deaths and Recovered</h5>
+  </div>
+    <p>The second visualisation hvdbf jkbjkbej kbkszmn bdfjbvb jkhgsbfcdjkhgckja jksadfghkjaf sofdhajkeh sklrdhgflksh slhfgl</p>
+</div> 
+
+    <div id="pie_chart_DeathsRecovered" class="chart_right">
+    </div>
+
+
+<div id="pie_chart_HCW"></div>
+
+
+</div>
 
 <script type="text/javascript">
   
@@ -32,6 +154,18 @@
   vegaEmbed('#bar_chart', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  
+    var vis3 = "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/Vis_pie_chart_DeathsRecovered.json";
+  vegaEmbed('#pie_chart_DeathsRecovered', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var vis4 = "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/Vis_pie_chart_HCW.json";
+  vegaEmbed('#pie_chart_HCW', vis4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  
 </script>
   
 </body>
