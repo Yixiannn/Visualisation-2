@@ -41,8 +41,8 @@
           "type": "quantitative",
           "scale": {
             "type": "threshold",
-            "domain": [40,80,120,160], 
-            "range": ["#fee5d9", "#fcae91","#fb6a4a","#cb181d"]}
+            "domain": [10,60,110,160], 
+            "range": ["#fee0d2", "##fc9272","#fc9272"]}
         }
       }
     }
