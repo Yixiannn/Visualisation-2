@@ -6,7 +6,6 @@
     "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
   },
   "transform": [
-      {"filter": {"field":"NumberOfDeaths","gt":"0"}},
     {
       "calculate": "datum.CumulativeTotalCases-datum.NumberOfDeaths",
       "as": "NumberOfRecovered"
