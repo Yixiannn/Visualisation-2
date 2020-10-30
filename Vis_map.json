@@ -7,6 +7,8 @@
     "format": {"type": "topojson", "feature": "custom"}
   },
   "transform": [
+    
+
     {
       "lookup": "properties.admin",
       "from": {
@@ -25,7 +27,7 @@
   "projection": {"type": "equirectangular"},
   "layer": [
     {
-      "mark": {"type": "geoshape", "color": "#dddcdc"},
+      "mark": {"type": "geoshape", "color": "#dddcdc","stroke":"white"},
       "encoding": {
         "longitude": {"field": "log", "type": "quantitative"},
         "latitude": {"field": "lat", "type": "quantitative"}
@@ -43,6 +45,7 @@
     }
   ],
   "encoding": {
+    
     "tooltip": [
       {
         "field": "properties.admin",
