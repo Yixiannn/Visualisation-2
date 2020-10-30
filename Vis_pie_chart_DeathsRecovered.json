@@ -17,11 +17,11 @@
     }
     ]},
     {
-      "calculate": "datum.NumberOfRecovered/datum.TotalCases",
+      "calculate": "datum.NumberOfRecovered/datum.TotalCases*100",
       "as": "Recovered"
     },
     {
-      "calculate": "datum.NumberOfDeaths/datum.TotalCases",
+      "calculate": "datum.NumberOfDeaths/datum.TotalCases*100",
       "as": "Deaths"
     },
 
