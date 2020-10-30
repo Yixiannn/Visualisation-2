@@ -1,24 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width":200,
-  "height":200,
+  "width": 200,
+  "height": 200,
   "data": {
     "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
   },
   "transform": [
+      {"filter": {"field":"NumberOfDeaths","gt":"0"}},
     {
       "calculate": "datum.CumulativeTotalCases-datum.NumberOfDeaths",
       "as": "NumberOfRecovered"
     },
+    {"joinaggregate": [{
+        "op":"sum",
+        "field":"CumulativeTotalCases",
+        "as":"TotalCases"
+    }
+    ]},
     {
-      "calculate": "format(datum.NumberOfRecovered/datum.CumulativeTotalCases,',.2f')",
+      "calculate": "datum.NumberOfRecovered/datum.TotalCases",
       "as": "Recovered"
     },
     {
-      "calculate": "format(datum.NumberOfDeaths/datum.CumulativeTotalCases,',.2f')",
+      "calculate": "datum.NumberOfDeaths/datum.TotalCases",
       "as": "Deaths"
     },
-    {"fold": ["Deaths", "Recovered"]}
+
+    {"fold": ["Deaths","Recovered"]}
+
+
   ],
   "mark": "arc",
   "encoding": {
@@ -29,7 +39,7 @@
       "title": "",
       "scale": {"range": ["#fc9272", "#9ecae1"]}
     },
-    "tooltip": {"field": "value", "aggregate": "sum"}
+    "tooltip": {"field": "value", "aggregate": "sum","format":".2f"}
   },
   "config": {}
 }
