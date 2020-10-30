@@ -42,7 +42,7 @@
           "scale": {
             "type": "threshold",
             "domain": [10,60,110,160], 
-            "range": ["#fcbba1", "#fb6a4a","#cb181d","#67000d"]}
+            "range": ["#fdd0a2", "#fd8d3c","#d94801","#7f2704"]}
         }
       }
     }
