@@ -10,12 +10,20 @@
       "calculate": "datum.CumulativeTotalCases-datum.NumberOfHCWAffected",
       "as": "NumberOfCommonCitizens"
     },
+
     {
-      "calculate": "format(datum.NumberOfCommonCitizens/datum.CumulativeTotalCases,',.2f')",
+      "joinaggregate": [{
+        "op":"sum",
+        "field":"CumulativeTotalCases",
+        "as":"TotalCases"
+      }]
+    },
+    {
+      "calculate": "datum.NumberOfCommonCitizens/datum.TotalCases",
       "as": "Common Citizen"
     },
     {
-      "calculate": "format(datum.NumberOfHCWAffected/datum.CumulativeTotalCases,',.2f')",
+      "calculate": "datum.NumberOfHCWAffected/datum.TotalCases",
       "as": "Health Care Worker"
     },
     {"fold": ["Common Citizen", "Health Care Worker"]}
@@ -27,9 +35,9 @@
       "field": "key",
       "type": "nominal",
       "title": "",
-      "scale": {"range": ["#99d8c9", "#2ca25f"]}
+      "scale": {"range": ["#6baed6", "#2171b5"]}
     },
-    "tooltip": {"field": "value", "aggregate": "sum"}
+    "tooltip": {"field": "value", "aggregate": "sum","format":".2f"}
   },
   "config": {}
 }
