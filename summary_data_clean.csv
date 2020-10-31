@@ -1,4 +1,4 @@
- ,CumulativeMaleCases,CumulativeFemaleCases,CumulativeTotalCases,NumberOfDeaths,CaseFatalitiesRatio(%),DateOnsetFirstProbableCase,DateOnsetLastProbableCase,MedianAge,AgeRange,NumberOfImportedCases,PercentageOfImportedCases,NumberOfHCWAffected,PercentageOfHCWAffected,Population
+ Country/Region,CumulativeMaleCases,CumulativeFemaleCases,CumulativeTotalCases,NumberOfDeaths,CaseFatalitiesRatio(%),DateOnsetFirstProbableCase,DateOnsetLastProbableCase,MedianAge,AgeRange,NumberOfImportedCases,PercentageOfImportedCases,NumberOfHCWAffected,PercentageOfHCWAffected,Population
 Australia,4,2,6,0,0,2003/2/26,2003/4/1,15,1-45,6,100,0,0,19731984
 Canada,151,100,251,43,17,2003/2/23,2003/6/12,49,1-98,5,2,109,43,32207113
 China,2674,2607,5327,349,7,2002/11/16,2003/6/3,,,,,1002,19,1286975468
