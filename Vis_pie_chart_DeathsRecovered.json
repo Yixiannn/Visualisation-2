@@ -8,7 +8,7 @@
   "transform": [
     {
       "calculate": "datum.CumulativeTotalCases-datum.NumberOfDeaths",
-      "as": "NumberOfRecovered"
+      "as": "NumberOfRecovery"
     },
 
     {
@@ -19,14 +19,14 @@
       }]
     },
     {
-      "calculate": "datum.NumberOfRecovered/datum.TotalCases",
-      "as": "Recovered"
+      "calculate": "datum.NumberOfRecovery/datum.TotalCases",
+      "as": "Recovery"
     },
     {
       "calculate": "datum.NumberOfDeaths/datum.TotalCases",
       "as": "Deaths"
     },
-    {"fold": ["Recovered", "Deaths"]}
+    {"fold": ["Recovery", "Deaths"]}
   ],
   "mark": "arc",
   "encoding": {
