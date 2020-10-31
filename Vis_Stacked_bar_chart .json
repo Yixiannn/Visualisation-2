@@ -29,7 +29,7 @@
       "field": "key", 
       "type": "nominal", 
       "title": "Gender",
-      "scale": {"range": ["#fdbb84", "#4292c6"]}
+      "scale": {"range": ["#fdbb84", "#ac4b1c"]}
       },
     "tooltip": {"field": "value"}
   },
