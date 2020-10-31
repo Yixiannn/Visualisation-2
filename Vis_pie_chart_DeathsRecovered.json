@@ -35,7 +35,7 @@
       "field": "key",
       "type": "nominal",
       "title": "",
-      "scale": {"range": ["#fdae6b", "#16697A"]}
+      "scale": {"range": [""#969696", "#fdae6b""]}
     },
     "tooltip": {"field": "value", "aggregate": "sum","format":".2f"}
   },
