@@ -7,27 +7,26 @@
   },
   "transform": [
     {
-      "calculate": "datum.CumulativeTotalCases-datum.NumberOfDeaths",
-      "as": "NumberOfRecovered"
+      "calculate": "datum.CumulativeTotalCases-datum.NumberOfHCWAffected",
+      "as": "NumberOfCommonCitizens"
     },
-    {"joinaggregate": [{
+
+    {
+      "joinaggregate": [{
         "op":"sum",
         "field":"CumulativeTotalCases",
         "as":"TotalCases"
-    }
-    ]},
-    {
-      "calculate": "datum.NumberOfRecovered/datum.TotalCases*100",
-      "as": "Recovered"
+      }]
     },
     {
-      "calculate": "datum.NumberOfDeaths/datum.TotalCases*100",
-      "as": "Deaths"
+      "calculate": "datum.NumberOfCommonCitizens/datum.TotalCases",
+      "as": "Common Citizen"
     },
-
-    {"fold": ["Deaths","Recovered"]}
-
-
+    {
+      "calculate": "datum.NumberOfHCWAffected/datum.TotalCases",
+      "as": "Health Care Worker"
+    },
+    {"fold": ["Common Citizen", "Health Care Worker"]}
   ],
   "mark": "arc",
   "encoding": {
@@ -36,7 +35,7 @@
       "field": "key",
       "type": "nominal",
       "title": "",
-      "scale": {"range": ["#fc9272", "#9ecae1"]}
+      "scale": {"range": ["#6baed6", "#2171b5"]}
     },
     "tooltip": {"field": "value", "aggregate": "sum","format":".2f"}
   },
