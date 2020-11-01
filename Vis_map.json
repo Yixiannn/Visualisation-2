@@ -33,7 +33,7 @@
         "latitude": {"field": "lat", "type": "quantitative"},
         "tooltip":[
           {"field":"properties.admin","type": "nominal","title":"Country"},
-          {"field":"CumulativeTotalCases","type": "quantitative","title":"Total Cases"}
+          {"field":"CumulativeTotalCases","type": "quantitative","title":"Total Case"}
         ]
       }
     },
