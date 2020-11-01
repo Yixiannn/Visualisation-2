@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 200,
+  "height": {"step": 10},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.CumulativeMaleCases/datum.CumulativeTotalCases,',.2f')",
+      "as": "Male"
+    },
+    {
+      "calculate": "format(datum.CumulativeFemaleCases/datum.CumulativeTotalCases,',.2f')",
+      "as": "Female"
+    },
+    {"fold": ["Male", "Female"]}
+  ],
+  "mark": {"type": "bar"},
+  "encoding": {
+    "row": {
+      "field": "Country/Region",
+      "header": {"labelAngle": 0, "labelAlign": "left"}
+    },
+    "y": {
+      "field": "key",
+      "type": "nominal",
+      "title": "",
+      "axis": {"labels": false}
+    },
+    "x": {
+      "field": "value",
+      "aggregate": "sum",
+      "type": "quantitative",
+      "title": "Total Cases",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "key",
+      "type": "nominal",
+      "title": "Gender",
+      "scale": {"range": ["#fdbb84", "#ac4b1c"]}
+    },
+    "tooltip": {"field": "value"}
+  },
+  "config": {"view": {"stroke": "transparent"}}
+}
