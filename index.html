@@ -17,7 +17,7 @@
 
   .page{
    width: 850px;
-   height: 1500px;
+   height: 1700px;
    background-color:white;
    margin: auto;
    padding: 50px;
@@ -26,14 +26,14 @@
   }
 
   h1{
-      background-color: rgb(247, 247, 247);
+      background-color:rgb(247, 247, 247);
       text-align: center;
       }
   
   h2{
     font-size: 30px;
     font-weight: bold;
-    color: #007dc0;
+    color: #d94801;
   }
 
   .summary_box{
@@ -42,31 +42,39 @@
     text-align: center;
     width:32%;
     margin: 5px;
-    margin-bottom: 30px;
+
   }
 
   .description_right{
       float: right;
-      width: 30%;
+      width: 40%;
       margin-bottom: 35px;
-      margin-top: 15px;
+
    }
 
    .bar_left{
        float: left;
-       width: 65%;
+       width: 60%;
        margin-bottom: 35px;
-       margin-top: 25px;
+       margin-top: 45px;
    }
-   .pie_description{
+   .pie_description_left{
        float: left;
-       width: 41%;
+       width: 40%;
+       margin: 0px 35px;
+
+   }
+
+   .pie_description_right{
+       float: right;
+       width: 43%;
        margin: 0px 35px;
 
    }
    .chart_title{
-     font-size: 18px;
-     margin-top: 25px;
+     float: right;
+     font-size: 17px;
+     margin-top: 27px;
    }
 
   
@@ -102,41 +110,45 @@
 
 
 <div class="chart_title">
-  <h3>Global Spread Of SARS</h3> 
+  <h3>Global Spread of SARS</h3> 
   <p>Over the next few months, the illness spread to more than two dozen countries in North America, South America, Europe, and Asia before the SARS global outbreak of 2003 was contained.</p>
+  <p> The epidemic of SARS affected 29 countries and result in 8,096 cases and 774 known deaths. No cases of SARS-CoV have been reported worldwide since 2004.</p>
 </div>
 <div id="Vis_map"></div>
-<p> At the end of the epidemic in June 2003, the incidence was 8,422 cases with a case fatality rate (CFR) of 11%. No cases of SARS-CoV have been reported worldwide since 2004.</p>
+
 
 
 
 
 <div class="description_right"> 
 <div class="chart_title">
-  <h3>Percentage of comfired male and female cases in each country</h4>
+  <h3>Percentage of Comfirmed Male and Female Cases in Each Country</h4>
 </div>
-    <p></p>
-</div> 
+    <p>According to the data, male patients accounted for 52.77% of case-patients which males may be more likely affected by the disease than females of 46.67% among SARS patients.</p>   
+    <p> And the average median age of SARS affected is 41.4.</p> 
+    <p>This finding could be related to a nonuniform case definition of SARS disease, a different treatment regimen, a past smoking history, work-environment factors, or gender-specific immune-defense factors, for instance.</p>
+ 
+  </div> 
     <div id="bar_chart" class="bar_left">
     </div>
 
 
 
 
-<div class="pie_description">
-  <div class="chart_title">
-    <h3>Percentage of Deaths and Recovered</h5>
-  </div>
-    <p></p>
-    <div id="pie_chart_DeathsRecovered" ></div>
+<div class="pie_description_left">
+
+    <h3>Percentage of Deaths and Recovery</h5>
+
+    <p>At the end of the epidemic in June 2003, the incidence was 8,422 cases with a case fatality rate (CFR) of 10%.</p>
+    <div id="pie_chart_DeathsRecovered" style="margin-top: 20px;" ></div>
   </div> 
   
 
-  <div class="pie_description">
-    <div class="chart_title">
-      <h3>Percentage Of Health Care Worker Affected</h5>
-    </div>
-      <p></p>
+  <div class="pie_description_right">
+   
+      <h3>Percentage of Health Care Worker Affected</h5>
+
+      <p>Healthcare workers accounted for a large proportion of persons with SARS outbreak. WHO had reported 1706 HCW infected cases in the worldwide which accounts for 21%  of all SARS confirmed cases.</p>
       <div id="pie_chart_HCW" ></div>
   </div>
 
