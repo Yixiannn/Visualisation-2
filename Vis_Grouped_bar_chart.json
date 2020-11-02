@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 200,
-  "height": {"step": 10},
+  "height": 13,
+  "spacing":3,
   "data": {
     "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/summary_data_clean.csv"
   },
@@ -20,6 +21,7 @@
   "encoding": {
     "row": {
       "field": "Country/Region",
+      "title":"Country",
       "header": {"labelAngle": 0, "labelAlign": "left"}
     },
     "y": {
@@ -30,7 +32,6 @@
     },
     "x": {
       "field": "value",
-      "aggregate": "sum",
       "type": "quantitative",
       "title": "Total Cases",
       "axis": {"grid": false}
@@ -43,5 +44,8 @@
     },
     "tooltip": {"field": "value"}
   },
-  "config": {"view": {"stroke": "transparent"}}
+  "config": {
+    "view": {"stroke": "transparent"}
+    
+}
 }
