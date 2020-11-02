@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title":"Economic Impact of SARS in China",
   "data": {
     "url": "https://raw.githubusercontent.com/Yixiannn/Visualisation-2/main/Economic%20Growth%20rate%20in%20China.csv"
   },
@@ -46,7 +47,7 @@
         "type": "text",
         "align": "center",
         "dx": 0,
-        "dy": -8,
+        "dy": -4,
         "baseline": "bottom"
       },
       "encoding": {
